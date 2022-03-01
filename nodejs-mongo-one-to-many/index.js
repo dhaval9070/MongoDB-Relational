@@ -2,6 +2,8 @@ const express = require('express')
 var bodyParser = require('body-parser')
 const app = express()
 // var dbConfig = require('./app/config/db.config');
+
+
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect(`mongodb://localhost:27017/onetomany`, {
@@ -12,6 +14,8 @@ mongoose.connect(`mongodb://localhost:27017/onetomany`, {
     console.log('Could not connect to the database. Exiting now...', err);
     process.exit();
 });
+
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
